@@ -1,0 +1,5 @@
+print("Hello World")
+print("Texto")
+print(1+1)
+print(20*20)
+print(100/5)
