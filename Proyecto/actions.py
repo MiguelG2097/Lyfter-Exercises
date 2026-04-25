@@ -1,16 +1,4 @@
-student_dict = {
-    "full_name": "",
-    "section": "",
-    "spanish_grade": 0,
-    "english_grade": 0,
-    "social_studies_grade": 0,
-    "science_grade": 0,
-    "average": 0
-}
-students = []
-
-
-def student_input():
+def student_input(students):
     while True:
         try:
             student_count = int(input("How many students do you want to enter "))
@@ -56,7 +44,7 @@ def get_valid_grade(subject_name):
         except ValueError:
             print("Invalid input. Please enter a valid number.")
 
-def view_students ():
+def view_students (students):
     if len(students) == 0:
         print("There are no students registered yet. ")
     else:
@@ -69,7 +57,7 @@ def view_students ():
             print(f"Social studies grade: {student['social_studies_grade']}")
             print(f"Science grade: {student['science_grade']}")
 
-def top3_avg ():
+def top3_avg (students):
     for student in students:
         average = (
             student["spanish_grade"] + student["english_grade"] +
@@ -87,7 +75,7 @@ def top3_avg ():
         print(f"Full Name: {student['full_name']} ")
         print(f"Average: {student['average']:.2f} ")
 
-def overall_avg():
+def overall_avg(students):
     if len(students) == 0:
         print("There are no students registered yet.")
         return

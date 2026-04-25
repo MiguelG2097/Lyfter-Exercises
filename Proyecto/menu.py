@@ -1,7 +1,9 @@
-from actions import students, student_input, view_students, top3_avg, overall_avg
+from actions import student_input, view_students, top3_avg, overall_avg
 from data import export_students_to_csv, import_csv
 
 def menu():
+
+    students = []
 
     
     while True:
@@ -20,13 +22,13 @@ def menu():
         
 
             if num == 1:
-                student_input()
+                student_input(students)
             elif num == 2:
-                view_students()
+                view_students(students)
             elif num == 3:
-                top3_avg()
+                top3_avg(students)
             elif num == 4:
-                overall_avg()
+                overall_avg(students)
             elif num == 5:
                 export_students_to_csv(students)
             elif num == 6:
